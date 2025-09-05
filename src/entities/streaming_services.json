@@ -1,0 +1,59 @@
+
+{
+  "name": "streaming_services",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["anime_id", "service_name", "availability", "createdAt"],
+        "properties": {
+          "anime_id": {
+            "bsonType": "string",
+            "description": "ID do anime"
+          },
+          "service_name": {
+            "bsonType": "string",
+            "enum": ["Crunchyroll", "Netflix", "Funimation", "Amazon Prime", "Hulu", "Disney+"],
+            "description": "Nome do serviço de streaming"
+          },
+          "service_url": {
+            "bsonType": "string",
+            "description": "URL direta para o anime no serviço"
+          },
+          "availability": {
+            "bsonType": "string",
+            "enum": ["disponivel", "indisponivel", "em_breve"],
+            "description": "Status de disponibilidade"
+          },
+          "subscription_required": {
+            "bsonType": "bool",
+            "description": "Requer assinatura premium"
+          },
+          "region": {
+            "bsonType": "string",
+            "description": "Região onde está disponível"
+          },
+          "language": {
+            "bsonType": "string",
+            "enum": ["legendado", "dublado", "ambos"],
+            "description": "Idiomas disponíveis"
+          },
+          "creator": {
+            "bsonType": "string"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

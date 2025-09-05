@@ -1,0 +1,84 @@
+
+{
+  "name": "animes",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["title", "synopsis", "status", "episodes", "genre", "rating", "releaseYear", "createdAt"],
+        "properties": {
+          "title": {
+            "bsonType": "string",
+            "description": "Título do anime"
+          },
+          "synopsis": {
+            "bsonType": "string",
+            "description": "Sinopse do anime"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["Em exibição", "Finalizado", "Em breve", "Pausado"],
+            "description": "Status atual do anime"
+          },
+          "episodes": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Número total de episódios"
+          },
+          "genre": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Lista de gêneros do anime"
+          },
+          "rating": {
+            "bsonType": "number",
+            "minimum": 0,
+            "maximum": 10,
+            "description": "Avaliação do anime (0-10)"
+          },
+          "releaseYear": {
+            "bsonType": "int",
+            "minimum": 1960,
+            "maximum": 2030,
+            "description": "Ano de lançamento"
+          },
+          "imageUrl": {
+            "bsonType": "string",
+            "description": "URL da imagem de capa"
+          },
+          "bannerUrl": {
+            "bsonType": "string",
+            "description": "URL do banner"
+          },
+          "studio": {
+            "bsonType": "string",
+            "description": "Estúdio de animação"
+          },
+          "duration": {
+            "bsonType": "string",
+            "description": "Duração dos episódios"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "Criador do registro"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de criação ISO 8601"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data de atualização ISO 8601"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,55 @@
+
+{
+  "name": "forum_comments",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["post_id", "user_id", "content", "createdAt"],
+        "properties": {
+          "post_id": {
+            "bsonType": "string",
+            "description": "ID do post pai"
+          },
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do autor do comentário"
+          },
+          "parent_comment_id": {
+            "bsonType": "string",
+            "description": "ID do comentário pai (para respostas)"
+          },
+          "content": {
+            "bsonType": "string",
+            "minLength": 1,
+            "maxLength": 1000,
+            "description": "Conteúdo do comentário"
+          },
+          "likes": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Curtidas do comentário"
+          },
+          "isEdited": {
+            "bsonType": "bool",
+            "description": "Comentário foi editado"
+          },
+          "creator": {
+            "bsonType": "string"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

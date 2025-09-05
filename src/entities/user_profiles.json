@@ -1,0 +1,179 @@
+
+{
+  "title": "user_profiles",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "title": "ID do Usuário"
+    },
+    "username": {
+      "type": "string",
+      "title": "Nome de Usuário"
+    },
+    "avatar": {
+      "type": "string",
+      "title": "URL do Avatar"
+    },
+    "banner": {
+      "type": "string",
+      "title": "URL do Banner do Perfil"
+    },
+    "bio": {
+      "type": "string",
+      "title": "Biografia"
+    },
+    "favoriteGenres": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Gêneros Favoritos"
+    },
+    "favoriteAnimes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "ID do Anime"
+          },
+          "title": {
+            "type": "string",
+            "title": "Título do Anime"
+          },
+          "image": {
+            "type": "string",
+            "title": "Imagem do Anime"
+          },
+          "rating": {
+            "type": "number",
+            "title": "Avaliação"
+          }
+        }
+      },
+      "title": "Animes Favoritos"
+    },
+    "socialLinks": {
+      "type": "object",
+      "properties": {
+        "instagram": {
+          "type": "string",
+          "title": "Instagram"
+        },
+        "twitter": {
+          "type": "string",
+          "title": "Twitter/X"
+        },
+        "youtube": {
+          "type": "string",
+          "title": "YouTube"
+        },
+        "website": {
+          "type": "string",
+          "title": "Website"
+        }
+      },
+      "title": "Redes Sociais"
+    },
+    "watchedCount": {
+      "type": "number",
+      "title": "Animes Assistidos"
+    },
+    "joinDate": {
+      "type": "string",
+      "title": "datetime"
+    },
+    "isActive": {
+      "type": "boolean",
+      "title": "Usuário Ativo"
+    },
+    "creator": {
+      "type": "string",
+      "title": "Criador"
+    },
+    "createdAt": {
+      "type": "string",
+      "title": "datetime"
+    },
+    "updatedAt": {
+      "type": "string",
+      "title": "datetime"
+    }
+  },
+  "examples": [
+    {
+      "user_id": "user123",
+      "username": "AnimeOtaku2024",
+      "avatar": "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg",
+      "banner": "https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg",
+      "bio": "Apaixonado por animes desde criança! Sempre em busca de novas histórias e mundos para explorar. Shounen é meu gênero favorito, mas adoro uma boa comédia também!",
+      "favoriteGenres": ["Shounen", "Ação", "Comédia", "Aventura"],
+      "favoriteAnimes": [
+        {
+          "id": "anime1",
+          "title": "Attack on Titan",
+          "image": "https://images.pexels.com/photos/3945313/pexels-photo-3945313.jpeg",
+          "rating": 9.5
+        },
+        {
+          "id": "anime2",
+          "title": "One Piece",
+          "image": "https://images.pexels.com/photos/3945314/pexels-photo-3945314.jpeg",
+          "rating": 9.8
+        },
+        {
+          "id": "anime3",
+          "title": "Demon Slayer",
+          "image": "https://images.pexels.com/photos/3945315/pexels-photo-3945315.jpeg",
+          "rating": 9.2
+        }
+      ],
+      "socialLinks": {
+        "instagram": "@animeotaku2024",
+        "twitter": "@otakuanime2024",
+        "youtube": "canal/animereviews2024",
+        "website": "https://meuanime.blog"
+      },
+      "watchedCount": 127,
+      "joinDate": "2024-01-15T10:30:00Z",
+      "isActive": true,
+      "creator": "user123",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "updatedAt": "2024-01-20T15:45:00Z"
+    },
+    {
+      "user_id": "user456",
+      "username": "SakuraFan",
+      "avatar": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+      "banner": "https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg",
+      "bio": "Fã de animes shoujo e slice of life. Amo histórias que tocam o coração e me fazem chorar. Sempre procurando por recomendações de romance!",
+      "favoriteGenres": ["Shoujo", "Romance", "Slice of Life", "Drama"],
+      "favoriteAnimes": [
+        {
+          "id": "anime4",
+          "title": "Your Name",
+          "image": "https://images.pexels.com/photos/3945316/pexels-photo-3945316.jpeg",
+          "rating": 9.7
+        },
+        {
+          "id": "anime5",
+          "title": "Spirited Away",
+          "image": "https://images.pexels.com/photos/3945317/pexels-photo-3945317.jpeg",
+          "rating": 9.9
+        }
+      ],
+      "socialLinks": {
+        "instagram": "@sakurafan",
+        "twitter": "@sakura_anime"
+      },
+      "watchedCount": 89,
+      "joinDate": "2024-02-01T14:20:00Z",
+      "isActive": true,
+      "creator": "user456",
+      "createdAt": "2024-02-01T14:20:00Z",
+      "updatedAt": "2024-02-10T09:15:00Z"
+    }
+  ]
+}

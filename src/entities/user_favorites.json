@@ -1,0 +1,34 @@
+
+{
+  "name": "user_favorites",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "anime_id", "createdAt"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do usuário do sistema de autenticação"
+          },
+          "anime_id": {
+            "bsonType": "string",
+            "description": "ID do anime favoritado"
+          },
+          "note": {
+            "bsonType": "string",
+            "description": "Nota pessoal sobre o anime"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Data quando foi favoritado"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,74 @@
+
+{
+  "name": "forum_posts",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["user_id", "title", "content", "category", "createdAt"],
+        "properties": {
+          "user_id": {
+            "bsonType": "string",
+            "description": "ID do autor do post"
+          },
+          "title": {
+            "bsonType": "string",
+            "minLength": 5,
+            "maxLength": 200,
+            "description": "Título do post"
+          },
+          "content": {
+            "bsonType": "string",
+            "minLength": 10,
+            "description": "Conteúdo do post"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["discussao", "recomendacao", "duvida", "noticia", "review"],
+            "description": "Categoria do post"
+          },
+          "anime_id": {
+            "bsonType": "string",
+            "description": "ID do anime relacionado (opcional)"
+          },
+          "likes": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Número de curtidas"
+          },
+          "views": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Número de visualizações"
+          },
+          "isPinned": {
+            "bsonType": "bool",
+            "description": "Post fixado"
+          },
+          "isLocked": {
+            "bsonType": "bool",
+            "description": "Post bloqueado para comentários"
+          },
+          "tags": {
+            "bsonType": "array",
+            "description": "Tags do post"
+          },
+          "creator": {
+            "bsonType": "string"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
