@@ -37,7 +37,7 @@ const AnimeDetail: React.FC = () => {
       if (!id) return
 
       try {
-        const animeData = await lumi.entities.animes.findById(id)
+        const animeData = await lumi.entities.animes.get(id) as Anime | null
         setAnime(animeData)
 
         // Verificar se está nos favoritos

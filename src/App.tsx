@@ -9,6 +9,7 @@ import AnimeDetail from './pages/AnimeDetail'
 import Favorites from './pages/Favorites'
 import Profile from './pages/Profile'
 import Forum from './pages/Forum'
+import ForumPostDetail from './pages/ForumPostDetail'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/profile/:userId" element={<Profile />} />
             <Route path="/forum" element={<Forum />} />
             <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="/forum/post/:postId" element={<ForumPostDetail />} />
           </Routes>
         </main>
         <Toaster 
